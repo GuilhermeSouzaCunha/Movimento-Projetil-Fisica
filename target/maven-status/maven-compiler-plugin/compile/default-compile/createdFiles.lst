@@ -1,0 +1,5 @@
+com\ifsp\movimentoprojetil\Projetil.class
+module-info.class
+com\ifsp\movimentoprojetil\TelaProjetilController.class
+com\ifsp\movimentoprojetil\App.class
+com\ifsp\movimentoprojetil\Trajetoria.class
