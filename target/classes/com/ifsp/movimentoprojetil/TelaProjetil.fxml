@@ -2,14 +2,19 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Polyline?>
+<?import javafx.scene.shape.QuadCurve?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="847.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ifsp.movimentoprojetil.TelaProjetilController">
@@ -18,42 +23,89 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <GridPane layoutX="322.0" layoutY="43.0" prefHeight="116.0" prefWidth="194.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="40.0">
+                  <GridPane layoutX="356.0" layoutY="123.0" prefHeight="116.0" prefWidth="213.0" AnchorPane.rightAnchor="17.600000000000023" AnchorPane.topAnchor="123.0">
                     <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="132.20001220703125" minWidth="10.0" prefWidth="132.20001220703125" />
-                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="96.199951171875" minWidth="10.0" prefWidth="69.79998779296875" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="142.19998779296876" minWidth="10.0" prefWidth="134.200048828125" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="96.199951171875" minWidth="10.0" prefWidth="39.799951171874994" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="96.199951171875" minWidth="10.0" prefWidth="39.599999999999994" />
                     </columnConstraints>
                     <rowConstraints>
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Label text="Alcance horizontal:" />
-                        <Label text="Altura máxima:" GridPane.rowIndex="1" />
-                        <Label text="Duração:" GridPane.rowIndex="2" />
-                        <Label prefHeight="18.0" prefWidth="58.0" GridPane.columnIndex="1" />
-                        <Label prefHeight="18.0" prefWidth="58.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <Label fx:id="lbDuracao" prefHeight="18.0" prefWidth="58.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <Label text="X:" GridPane.rowIndex="3" />
-                        <Label text="Y:" GridPane.rowIndex="4" />
-                        <Label fx:id="lbPosicaoX" prefHeight="18.0" prefWidth="58.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <Label fx:id="lbPosicaoY" prefHeight="18.0" prefWidth="58.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label fx:id="lbD1" text="Alcance horizontal:" />
+                        <Label fx:id="lbD2" text="Altura máxima:" GridPane.rowIndex="1" />
+                        <Label fx:id="lbD3" text="X (horizontal):" GridPane.rowIndex="2" />
+                        <Label fx:id="lbD4" text="Y (vertical):" GridPane.rowIndex="3" />
+                        <Label fx:id="lbE1" prefHeight="18.0" prefWidth="38.0" text="m" GridPane.columnIndex="2" />
+                        <Label fx:id="lbE2" prefHeight="18.0" prefWidth="42.0" text="m" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <Label fx:id="lbE3" prefHeight="18.0" prefWidth="42.0" text="m" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <Label fx:id="lbE4" prefHeight="18.0" prefWidth="42.0" text="m" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                        <Label fx:id="lbResul1" alignment="CENTER" prefHeight="18.0" prefWidth="62.0" GridPane.columnIndex="1" />
+                        <Label fx:id="lbResul2" alignment="CENTER" prefHeight="18.0" prefWidth="62.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="lbResul3" alignment="CENTER" prefHeight="18.0" prefWidth="62.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label fx:id="lbResul4" alignment="CENTER" prefHeight="18.0" prefWidth="62.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                      </children>
                   </GridPane>
-                  <Button fx:id="btSalvar" layoutX="499.0" layoutY="324.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="68.0" text="Salvar" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="20.0" />
+                  <GridPane layoutX="356.0" layoutY="40.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <RadioButton fx:id="rButtonPosicao" mnemonicParsing="false" onAction="#getResul" selected="true" text="Posição">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="formulas" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="rButtonVelocidade" mnemonicParsing="false" onAction="#getResul" text="Velocidade" toggleGroup="$formulas" GridPane.rowIndex="1" />
+                     </children>
+                  </GridPane>
+                  <GridPane layoutX="43.0" layoutY="40.0" prefHeight="26.0" prefWidth="183.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="94.1999755859375" minWidth="10.0" prefWidth="94.1999755859375" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="89.59999389648439" minWidth="10.0" prefWidth="35.800024414062506" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="88.79998779296876" minWidth="10.0" prefWidth="54.199975585937494" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Duração:" />
+                        <Label prefHeight="18.0" prefWidth="42.0" text="s" GridPane.columnIndex="2" />
+                        <Label fx:id="lbDuracao" alignment="CENTER" prefHeight="18.0" prefWidth="62.0" GridPane.columnIndex="1" />
+                     </children>
+                  </GridPane>
+                  <Line endX="179.0" layoutX="135.0" layoutY="335.0" startX="-100.0" />
+                  <Line endX="-99.99999237060547" endY="-214.60000610351562" layoutX="150.0" layoutY="349.0" startX="-100.0" />
+                  <Circle fx:id="circulo" fill="DODGERBLUE" layoutX="50.0" layoutY="335.0" radius="7.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.bottomAnchor="56.39999999999998" AnchorPane.leftAnchor="43.0" AnchorPane.rightAnchor="530.2" AnchorPane.topAnchor="328.0" />
+                  <Polyline fill="#80ff0000" layoutX="48.0" layoutY="160.0" points="-8.600006103515625, -40.0, 13.800018310546875, -40.0, 2.600006103515625, -25.399993896484375, -8.600006103515625, -40.0" rotate="-180.0" strokeType="INSIDE" />
+                  <Polyline fill="#80ff0000" layoutX="319.0" layoutY="368.0" points="-8.600006103515625, -40.0, 13.800018310546875, -40.0, 2.600006103515625, -25.399993896484375, -8.600006103515625, -40.0" rotate="-90.0" strokeType="INSIDE" />
+                  <Label layoutX="31.0" layoutY="111.0" prefHeight="18.0" prefWidth="15.0" text="y">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="328.0" layoutY="338.0" prefHeight="18.0" prefWidth="15.0" text="x">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
                </children></AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="318.0">
                <children>
                   <GridPane prefHeight="262.0" prefWidth="194.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="40.0">
                     <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="195.19990234375" minWidth="10.0" prefWidth="183.0000732421875" />
-                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="66.39999389648438" minWidth="10.0" prefWidth="30.199926757812506" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="195.19990234375" minWidth="10.0" prefWidth="173.6000244140625" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="66.39999389648438" minWidth="10.0" prefWidth="39.999975585937506" />
                     </columnConstraints>
                     <rowConstraints>
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -62,67 +114,62 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <TextField fx:id="inputDiametro" prefHeight="26.0" prefWidth="154.0" promptText="Diâmetro" GridPane.rowIndex="1">
+                        <TextField fx:id="inputDiametro" prefHeight="26.0" prefWidth="154.0" promptText="Diâmetro">
                            <font>
                               <Font name="Arial" size="10.0" />
                            </font>
                         </TextField>
-                        <TextField fx:id="inputAlturaInicial" prefHeight="26.0" prefWidth="154.0" promptText="Altura inicial" GridPane.rowIndex="2">
+                        <TextField fx:id="inputAlturaInicial" prefHeight="26.0" prefWidth="154.0" promptText="Altura inicial" GridPane.rowIndex="1">
                            <font>
                               <Font size="10.0" />
                            </font>
                         </TextField>
-                        <TextField fx:id="inputAceleracaoQueda" prefHeight="26.0" prefWidth="154.0" promptText="Aceleração queda" GridPane.rowIndex="6">
+                        <TextField fx:id="inputAceleracaoQueda" prefHeight="26.0" prefWidth="154.0" promptText="Aceleração queda" GridPane.rowIndex="5">
                            <font>
                               <Font size="10.0" />
                            </font>
                         </TextField>
-                        <TextField fx:id="inputVelocidadeInicial" prefHeight="26.0" prefWidth="154.0" promptText="Velocidade inicial" GridPane.rowIndex="3">
+                        <TextField fx:id="inputVelocidadeInicial" prefHeight="26.0" prefWidth="154.0" promptText="Velocidade inicial" GridPane.rowIndex="2">
                            <font>
                               <Font size="10.0" />
                            </font>
                         </TextField>
-                        <TextField fx:id="inputAngulo" prefHeight="26.0" prefWidth="154.0" promptText="Ângulo" GridPane.rowIndex="4">
+                        <TextField fx:id="inputAngulo" prefHeight="26.0" prefWidth="154.0" promptText="Ângulo" GridPane.rowIndex="3">
                            <font>
                               <Font size="10.0" />
                            </font>
                         </TextField>
-                        <TextField fx:id="inputMassa" prefHeight="26.0" prefWidth="154.0" promptText="Massa" GridPane.rowIndex="5">
+                        <TextField fx:id="inputMassa" prefHeight="26.0" prefWidth="154.0" promptText="Massa" GridPane.rowIndex="4">
                            <font>
                               <Font size="10.0" />
                            </font>
                         </TextField>
-                        <ComboBox fx:id="boxObjProjetil" prefHeight="26.0" prefWidth="177.0">
-                           <GridPane.margin>
-                              <Insets />
-                           </GridPane.margin>
-                        </ComboBox>
-                        <Label prefHeight="18.0" prefWidth="10.0" text="m" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <Label alignment="CENTER" prefHeight="18.0" prefWidth="34.0" text="m" GridPane.columnIndex="1">
                            <GridPane.margin>
                               <Insets left="2.0" />
                            </GridPane.margin>
                         </Label>
-                        <Label text="m" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                        <Label alignment="CENTER" prefHeight="18.0" prefWidth="43.0" text="m" GridPane.columnIndex="1" GridPane.rowIndex="1">
                            <GridPane.margin>
                               <Insets left="2.0" />
                            </GridPane.margin>
                         </Label>
-                        <Label text="°" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                        <Label alignment="CENTER" prefHeight="18.0" prefWidth="38.0" text="°" GridPane.columnIndex="1" GridPane.rowIndex="3">
                            <GridPane.margin>
                               <Insets left="2.0" />
                            </GridPane.margin>
                         </Label>
-                        <Label text="kg" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                        <Label alignment="CENTER" prefHeight="18.0" prefWidth="47.0" text="kg" GridPane.columnIndex="1" GridPane.rowIndex="4">
                            <GridPane.margin>
                               <Insets left="2.0" />
                            </GridPane.margin>
                         </Label>
-                        <Label prefHeight="18.0" prefWidth="27.0" text="m/s²" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                        <Label alignment="CENTER" prefHeight="18.0" prefWidth="44.0" text="m/s²" GridPane.columnIndex="1" GridPane.rowIndex="5">
                            <GridPane.margin>
                               <Insets left="2.0" />
                            </GridPane.margin>
                         </Label>
-                        <Label prefHeight="18.0" prefWidth="24.0" text="m/s" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                        <Label alignment="CENTER" prefHeight="18.0" prefWidth="39.0" text="m/s" GridPane.columnIndex="1" GridPane.rowIndex="2">
                            <GridPane.margin>
                               <Insets left="2.0" />
                            </GridPane.margin>
@@ -130,10 +177,11 @@
                      </children>
                   </GridPane>
                   <Button fx:id="btStart" layoutX="20.0" layoutY="321.0" mnemonicParsing="false" onAction="#calcular" prefHeight="26.0" prefWidth="68.0" text="Star" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="20.0" />
-                  <Button fx:id="btReset11" layoutX="106.0" layoutY="322.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="68.0" text="Reset" AnchorPane.bottomAnchor="49.99999999999998" AnchorPane.leftAnchor="106.0" AnchorPane.rightAnchor="78.80000000000001" AnchorPane.topAnchor="322.0" />
+                  <Button fx:id="btReset" layoutX="106.0" layoutY="322.0" mnemonicParsing="false" onAction="#reset" prefHeight="26.0" prefWidth="68.0" text="Reset" AnchorPane.bottomAnchor="49.99999999999998" AnchorPane.leftAnchor="106.0" AnchorPane.rightAnchor="78.80000000000001" AnchorPane.topAnchor="322.0" />
                </children>
             </AnchorPane>
         </items>
       </SplitPane>
+      <QuadCurve controlX="-50.0" controlY="-100.0" endX="50.0" fill="DODGERBLUE" layoutX="-57.0" layoutY="119.0" startX="-50.0" stroke="BLACK" strokeType="INSIDE" />
    </children>
 </AnchorPane>

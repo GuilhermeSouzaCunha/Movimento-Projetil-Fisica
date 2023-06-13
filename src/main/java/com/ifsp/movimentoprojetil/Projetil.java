@@ -9,18 +9,28 @@ public class Projetil {
     private double velocidade;
     private double massa;
     private double aceleracao;
+    private double diametro;
     
     public Projetil() {
         
     }
     
-    public Projetil(double altura, double angulo, double velocidade, double massa, double aceleracao) {
+    public Projetil(double altura, double angulo, double velocidade, double massa, double aceleracao, double diametro) {
         this.k(1);
         this.altura = altura;
         this.angulo = angulo;
         this.velocidade = velocidade;
         this.massa = massa;
         this.aceleracao = aceleracao;
+        this.diametro = diametro;
+    }
+    
+    public void setDiametro(double diametro) {
+        this.diametro = diametro;
+    }
+    
+    public double getDiametro() {
+        return diametro;
     }
     
     public void setAltura(double altura) {
