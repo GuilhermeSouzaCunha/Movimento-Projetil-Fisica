@@ -8,9 +8,10 @@
 <h2 align="center">Sumário</h2>
 <p>
  <a href="#resumo">Resumo</a> •
-  <a href="#descricao">Descrição</a> •
+ <a href="#descricao">Descrição</a> •
  <a href="#tecnologia">Tecnologia</a> •
  <a href="#pré-requisitos">Pré-requisitos</a> •
+ <a href="#download">Download</a> •
  <a href="#autor">Autor</a> •
 </p>
 
@@ -50,7 +51,11 @@ Em resumo, o simulador de movimento de projétil em Java é uma ferramenta útil
 
 <ul>
   <li>[Java](https://www.java.com/pt-BR/)</li>
+  <li>[IDE - Ambiente de desenvolvimento integrado]()</li>
 </ul>
+
+<!-- ---------------------------------- Download ---------------------------------- -->
+<h2 align="center" id="download">Download</h2>
 
 <p>Para o Download utilize o git para clonar o repositório</p>
 
