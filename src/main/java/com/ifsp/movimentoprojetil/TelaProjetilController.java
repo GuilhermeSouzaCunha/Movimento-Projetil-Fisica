@@ -48,10 +48,8 @@ public class TelaProjetilController implements Initializable {
     
     Projetil p = new Projetil();
     Trajetoria t = new Trajetoria();
-    TempoTrajetoria tt = new TempoTrajetoria();
     
     public void calcular(ActionEvent event) throws InterruptedException {
-        
         t.setVelocidade(Double.parseDouble(inputVelocidadeInicial.getText()));
         t.setAngulo(Double.parseDouble(inputAngulo.getText()));
         t.setAceleracao(Double.parseDouble(inputAceleracaoQueda.getText()));
@@ -62,6 +60,7 @@ public class TelaProjetilController implements Initializable {
         lbResul2.setText(String.format("%.2f", t.alturaMaxima()));
         lbResul1.setText(String.format("%.2f", t.alcance()));
         
+        // Modulo da velocidade, duração e velocidade posição de xy
         time = 0;
         Thread thread = new Thread(() -> {
         y = t.getAltura();
@@ -87,7 +86,7 @@ public class TelaProjetilController implements Initializable {
         });
         thread.start();
  
-        //circulo.setRadius(t.getDiametro());
+        // Simulação do movimento do projetil
         Path path = new Path();
         path.getElements().add(new MoveTo(0, -(5 * t.getAltura())));
         path.getElements().add(new CubicCurveTo(0, -100, 100, -100, 200, 0));
@@ -102,6 +101,7 @@ public class TelaProjetilController implements Initializable {
     
     public void getResul(ActionEvent event) {
         if(rButtonPosicao.isSelected()) {
+            // Opção radio posição
             lbD1.setText("Alcance horizontal:");
             lbD2.setText("Altura máxima:");
             lbD3.setText("X (horizontal):");
@@ -117,6 +117,7 @@ public class TelaProjetilController implements Initializable {
             lbResul3.setText(String.format("%.2f", x));
             lbResul4.setVisible(true);
         } else if (rButtonVelocidade.isSelected()) {
+            // Opção radio velocidade
             lbD1.setText("Vy (vertical):");
             lbD2.setText("Vx (horizontal):");
             lbD3.setText("Módulo da velocidade:");

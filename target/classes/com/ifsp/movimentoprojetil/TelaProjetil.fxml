@@ -176,7 +176,7 @@
                         </Label>
                      </children>
                   </GridPane>
-                  <Button fx:id="btStart" layoutX="20.0" layoutY="321.0" mnemonicParsing="false" onAction="#calcular" prefHeight="26.0" prefWidth="68.0" text="Star" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="20.0" />
+                  <Button fx:id="btStart" layoutX="20.0" layoutY="321.0" mnemonicParsing="false" onAction="#calcular" prefHeight="26.0" prefWidth="68.0" text="Start" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="20.0" />
                   <Button fx:id="btReset" layoutX="106.0" layoutY="322.0" mnemonicParsing="false" onAction="#reset" prefHeight="26.0" prefWidth="68.0" text="Reset" AnchorPane.bottomAnchor="49.99999999999998" AnchorPane.leftAnchor="106.0" AnchorPane.rightAnchor="78.80000000000001" AnchorPane.topAnchor="322.0" />
                </children>
             </AnchorPane>
