@@ -2,11 +2,12 @@
 <h1 align="center">Movimento-Projetil-Fisica</h1>
 
 <!-- ---------------------------------- Status ---------------------------------- -->
-<h4 align="center">🚧  Projeto Em construção...  🚧</h4>
+<p align="center"><b>Status:</b> Versão inicial completa. Pode haver novas versões futuramente.</p>
 
 <!-- ---------------------------------- Sumario ---------------------------------- -->
 <h2 align="center">Sumário</h2>
 <p>
+ <a href="#pré-visualização">Pré-visualização</a> •
  <a href="#resumo">Resumo</a> •
  <a href="#descricao">Descrição</a> •
  <a href="#tecnologia">Tecnologia</a> •
@@ -15,24 +16,26 @@
  <a href="#autor">Autor</a> •
 </p>
 
+<!-- ---------------------------------- Pré-visualização ---------------------------------- -->
+<h2 align="center">Pré-visualização</h2>
+<p id="pré-visualização" align="center">
+ <img src="midia/gifProjeto.gif">
+</p>
+
 <!-- ---------------------------------- Resumo ---------------------------------- -->
 <!-- Resumo -->
 <h2 align="center">Resumo</h2>
 
-<p id="resumo">Este é um simulador de movimento de projétil desenvolvido em Java, que permite visualizar e calcular a trajetória de um projétil em diferentes situações. Levando em consideração variáveis como a massa do projétil, altura de lançamento, ângulo de lançamento, velocidade inicial, aceleração da gravidade e a força de resistência do ar, este simulador pode ser útil para estudantes, engenheiros e pesquisadores que trabalham com dinâmica de projéteis em diferentes áreas, como balística, mecânica e aerodinâmica. O projeto possui uma interface gráfica de usuário (GUI) amigável e fácil de usar, e foi desenvolvido utilizando conceitos de orientação a objetos e cálculo matemático para garantir um simulador preciso e funcional.</p>
+<p id="resumo">Este é um simulador de movimento de projétil desenvolvido em Java, que permite visualizar e calcular a trajetória de um projétil em diferentes situações. Levando em consideração variáveis como a massa, altura de lançamento, ângulo de lançamento, velocidade inicial e aceleração da gravidade. O projeto possui uma interface gráfica de usuário (GUI) amigável e fácil de usar, e foi desenvolvido utilizando conceitos de orientação a objetos e cálculo matemático para garantir um simulador preciso e funcional.</p>
 
 <!-- ---------------------------------- Descrição ---------------------------------- -->
 <h2 align="center" id="descricao">Descrição</h2>
 
 <p>O simulador de movimento de projétil é uma ferramenta desenvolvida em Java para auxiliar na visualização e cálculo da trajetória de um projétil em diferentes circunstâncias. O projeto foi criado com o objetivo de fornecer uma ferramenta útil para estudantes, engenheiros e pesquisadores que trabalham com dinâmica de projéteis em diferentes áreas, como balística, mecânica e aerodinâmica.
 
-O simulador é capaz de levar em consideração diversas variáveis que influenciam o movimento do projétil, incluindo a massa do projétil, altura de lançamento, ângulo de lançamento, velocidade inicial, aceleração da gravidade e a força de resistência do ar. A partir dessas variáveis, o simulador é capaz de calcular e exibir informações como a trajetória, a velocidade horizontal e vertical, a altura máxima atingida, o alcance máximo, entre outras.
+O simulador é capaz de levar em consideração diversas variáveis que influenciam o movimento do projétil, incluindo a massa, altura de lançamento, ângulo de lançamento, velocidade inicial e aceleração da gravidade. A partir dessas variáveis, o simulador é capaz de calcular e exibir informações como a trajetória, a velocidade horizontal e vertical, a altura máxima atingida, o alcance máximo, posição horizontal e vertical a cada instante e módulo da velocidade.
 
-O projeto foi desenvolvido com base em conceitos de orientação a objetos e cálculo matemático, utilizando uma interface gráfica de usuário (GUI) amigável e fácil de usar. O usuário pode inserir os parâmetros desejados e visualizar a trajetória do projétil em tempo real, tornando o processo de aprendizado mais interativo e dinâmico.
-
-Para garantir a precisão dos cálculos, o simulador também leva em consideração a densidade do meio e a viscosidade do ar, que influenciam diretamente na força de resistência do ar. O valor dessas variáveis pode ser configurado pelo usuário ou obtido por meio de fórmulas que levam em consideração a altitude, temperatura e umidade do local.
-
-Em resumo, o simulador de movimento de projétil em Java é uma ferramenta útil para estudantes, engenheiros e pesquisadores que desejam entender melhor os princípios de dinâmica de projéteis e seus efeitos em diferentes situações. Com uma interface fácil de usar e cálculos precisos, o simulador oferece uma maneira interativa de aprender e visualizar os conceitos teóricos de maneira prática e aplicada.</p>
+O projeto foi desenvolvido com base em conceitos de orientação a objetos com Java e utilizando biblioteca JavaFX que usamos para criar a interface gráfica de usuário (GUI) amigável e fácil de usar. O usuário pode inserir os parâmetros desejados e visualizar a trajetória do projétil em tempo real, tornando o processo de aprendizado mais interativo e dinâmico.</p>
 
 <!-- ---------------------------------- Tecnologias ---------------------------------- -->
 <h2 align="center" id="tecnologia">Tecnologias</h2>
